@@ -2,9 +2,13 @@ const express = require('express');
 const session = require('express-session');
 const dotenv = require('dotenv');
 const apiRoutes = require('./routes/api');
+const cors = require('cors');
 
 dotenv.config(); // Load environment variables from .env file
 const app = express(); // Create an Express application instance
+
+// Configura o CORS para permitir requisições da origem http://localhost:3000
+app.use(cors({ origin: 'http://localhost:3000' }));
 
 app.use(express.json()); // Middleware to parse JSON request bodies
 app.use(session({ 
