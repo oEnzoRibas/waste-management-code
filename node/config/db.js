@@ -1,6 +1,6 @@
 const mysql = require('mysql2'); // Certifique-se de que mysql2 está instalado
 
-// Criar uma conexão com o banco de dados
+// Criar uma conexão com o banco de dados com pool
 const pool = mysql.createPool({
   host: 'localhost',
   user: 'root',
